@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@plugin "@tailwindcss/forms";
+@plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 @source '../node_modules/pliny';
 @custom-variant dark (&:where(.dark, .dark *));
@@ -7,34 +7,97 @@
 /* Core theme configuration */
 @theme {
   /* Font families */
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  --font-sans:
+    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-heading: var(--font-anta), var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 
-  /* Colors */
-  /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
-  --color-primary-50: oklch(0.971 0.014 343.198);
-  --color-primary-100: oklch(0.948 0.028 342.258);
-  --color-primary-200: oklch(0.899 0.061 343.231);
-  --color-primary-300: oklch(0.823 0.12 346.018);
-  --color-primary-400: oklch(0.718 0.202 349.761);
-  --color-primary-500: oklch(0.656 0.241 354.308);
-  --color-primary-600: oklch(0.592 0.249 0.584);
-  --color-primary-700: oklch(0.525 0.223 3.958);
-  --color-primary-800: oklch(0.459 0.187 3.815);
-  --color-primary-900: oklch(0.408 0.153 2.432);
-  --color-primary-950: oklch(0.284 0.109 3.907);
+  /* Primary = cerulean (links, focus) */
+  --color-primary-50: #ebf4f9;
+  --color-primary-100: #d7eaf4;
+  --color-primary-200: #b0d4e8;
+  --color-primary-300: #88bfdd;
+  --color-primary-400: #61aad1;
+  --color-primary-500: #3995c6;
+  --color-primary-600: #2e779e;
+  --color-primary-700: #225977;
+  --color-primary-800: #173b4f;
+  --color-primary-900: #0b1e28;
+  --color-primary-950: #08151c;
 
-  --color-gray-50: oklch(0.985 0.002 247.839);
-  --color-gray-100: oklch(0.967 0.003 264.542);
-  --color-gray-200: oklch(0.928 0.006 264.531);
-  --color-gray-300: oklch(0.872 0.01 258.338);
-  --color-gray-400: oklch(0.707 0.022 261.325);
-  --color-gray-500: oklch(0.551 0.027 264.364);
-  --color-gray-600: oklch(0.446 0.03 256.802);
-  --color-gray-700: oklch(0.373 0.034 259.733);
-  --color-gray-800: oklch(0.278 0.033 256.848);
-  --color-gray-900: oklch(0.21 0.034 264.665);
-  --color-gray-950: oklch(0.13 0.028 261.692);
+  /* Neutrals = pale-sky (lighter UI) */
+  --color-gray-50: #ebf2f9;
+  --color-gray-100: #d8e4f3;
+  --color-gray-200: #b1c9e7;
+  --color-gray-300: #8aaedb;
+  --color-gray-400: #6394cf;
+  --color-gray-500: #3c79c3;
+  --color-gray-600: #30619c;
+  --color-gray-700: #244875;
+  --color-gray-800: #18304e;
+  --color-gray-900: #0c1827;
+  --color-gray-950: #08111b;
+
+  --color-pale-sky-50: #ebf2f9;
+  --color-pale-sky-100: #d8e4f3;
+  --color-pale-sky-200: #b1c9e7;
+  --color-pale-sky-300: #8aaedb;
+  --color-pale-sky-400: #6394cf;
+  --color-pale-sky-500: #3c79c3;
+  --color-pale-sky-600: #30619c;
+  --color-pale-sky-700: #244875;
+  --color-pale-sky-800: #18304e;
+  --color-pale-sky-900: #0c1827;
+  --color-pale-sky-950: #08111b;
+
+  --color-cerulean-50: #ebf4f9;
+  --color-cerulean-100: #d7eaf4;
+  --color-cerulean-200: #b0d4e8;
+  --color-cerulean-300: #88bfdd;
+  --color-cerulean-400: #61aad1;
+  --color-cerulean-500: #3995c6;
+  --color-cerulean-600: #2e779e;
+  --color-cerulean-700: #225977;
+  --color-cerulean-800: #173b4f;
+  --color-cerulean-900: #0b1e28;
+  --color-cerulean-950: #08151c;
+
+  /* User "white" scale (teal; distinct from keyword `white`) */
+  --color-white-50: #ecf9f9;
+  --color-white-100: #d9f2f2;
+  --color-white-200: #b3e5e6;
+  --color-white-300: #8cd9d9;
+  --color-white-400: #66cccc;
+  --color-white-500: #40bfbf;
+  --color-white-600: #339999;
+  --color-white-700: #267373;
+  --color-white-800: #194d4d;
+  --color-white-900: #0d2626;
+  --color-white-950: #091b1b;
+
+  --color-baltic-blue-50: #e5f4ff;
+  --color-baltic-blue-100: #cce9ff;
+  --color-baltic-blue-200: #99d3ff;
+  --color-baltic-blue-300: #66bdff;
+  --color-baltic-blue-400: #33a7ff;
+  --color-baltic-blue-500: #0091ff;
+  --color-baltic-blue-600: #0074cc;
+  --color-baltic-blue-700: #005799;
+  --color-baltic-blue-800: #003a66;
+  --color-baltic-blue-900: #001d33;
+  --color-baltic-blue-950: #001424;
+
+  --color-turquoise-surf-50: #e7f9fd;
+  --color-turquoise-surf-100: #cff4fc;
+  --color-turquoise-surf-200: #9fe8f9;
+  --color-turquoise-surf-300: #6fddf6;
+  --color-turquoise-surf-400: #3fd2f3;
+  --color-turquoise-surf-500: #0fc7f0;
+  --color-turquoise-surf-600: #0c9fc0;
+  --color-turquoise-surf-700: #097790;
+  --color-turquoise-surf-800: #064f60;
+  --color-turquoise-surf-900: #032830;
+  --color-turquoise-surf-950: #021c22;
 
   /* Line heights */
   --line-height-11: 2.75rem;
@@ -79,17 +142,22 @@
 }
 
 @layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
   .prose {
     & a {
-      color: var(--color-primary-500);
+      color: var(--color-primary-600);
       &:hover {
-        color: var(--color-primary-600);
+        color: var(--color-primary-700);
       }
       & code {
-        color: var(--color-primary-400);
+        color: var(--color-primary-500);
       }
     }
     & :where(h1, h2) {
+      font-family: var(--font-heading);
       font-weight: 700;
       letter-spacing: var(--tracking-tight);
     }
@@ -97,15 +165,15 @@
       font-weight: 600;
     }
     & :where(code):not(pre code) {
-      color: var(--color-indigo-500);
+      color: var(--color-baltic-blue-600);
     }
   }
 
   .prose-invert {
     & a {
-      color: var(--color-primary-500);
+      color: var(--color-primary-400);
       &:hover {
-        color: var(--color-primary-400);
+        color: var(--color-primary-300);
       }
       & code {
         color: var(--color-primary-400);
@@ -114,6 +182,78 @@
     & :where(h1, h2, h3, h4, h5, h6) {
       color: var(--color-gray-100);
     }
+  }
+}
+
+@layer components {
+  .cyber-glass {
+    background: color-mix(in srgb, var(--color-pale-sky-50) 72%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .cyber-neon-border {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-turquoise-surf-400) 55%, transparent),
+      0 0 24px color-mix(in srgb, var(--color-baltic-blue-400) 25%, transparent);
+  }
+
+  .cyber-muted {
+    color: var(--color-gray-600);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+  }
+
+  .cyber-ps1 {
+    text-shadow:
+      2px 0 0 color-mix(in srgb, var(--color-turquoise-surf-500) 45%, transparent),
+      -1px 0 0 color-mix(in srgb, var(--color-baltic-blue-500) 35%, transparent);
+  }
+
+  .cyber-text-glow {
+    text-shadow:
+      0 0 12px color-mix(in srgb, var(--color-turquoise-surf-400) 55%, transparent),
+      0 0 2px var(--color-cerulean-700);
+  }
+
+  /* Dramatic vaporwave neon for section titles */
+  .cyber-neon-section-title {
+    letter-spacing: 0.06em;
+    text-shadow:
+      0 0 1px var(--color-turquoise-surf-300),
+      0 0 3px color-mix(in srgb, var(--color-turquoise-surf-400) 85%, transparent),
+      0 0 8px color-mix(in srgb, var(--color-turquoise-surf-500) 75%, transparent),
+      0 0 16px color-mix(in srgb, var(--color-turquoise-surf-400) 55%, transparent),
+      0 0 28px color-mix(in srgb, var(--color-baltic-blue-400) 45%, transparent),
+      0 0 42px color-mix(in srgb, var(--color-turquoise-surf-500) 30%, transparent),
+      -2px 0 1px color-mix(in srgb, var(--color-turquoise-surf-400) 40%, transparent),
+      2px 0 1px color-mix(in srgb, var(--color-baltic-blue-400) 35%, transparent);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .cyber-main-surface {
+    border-radius: var(--radius-xl);
+    border: 1px solid color-mix(in srgb, var(--color-turquoise-surf-200) 80%, transparent);
+    background: color-mix(in srgb, var(--color-pale-sky-50) 88%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .cyber-header-bar {
+    border-radius: 0 0 1rem 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-turquoise-surf-200) 70%, transparent);
+    border-top: none;
+    padding: 1.5rem 0.5rem;
+    background: color-mix(in srgb, var(--color-pale-sky-50) 72%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px color-mix(in srgb, var(--color-turquoise-surf-300) 20%, transparent);
   }
 }
 
@@ -172,4 +312,61 @@ input:-webkit-autofill:focus {
 .linkicon {
   display: inline-block;
   vertical-align: middle;
+}
+
+/* Cyber cursor — soft “bubble” glow pulse (box-shadow only; transform is JS-driven) */
+@keyframes cyber-cursor-bubble-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 28px rgba(34, 211, 238, 0.45),
+      0 0 56px rgba(217, 70, 239, 0.22),
+      inset 0 0 18px rgba(255, 255, 255, 0.18);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(34, 211, 238, 0.65),
+      0 0 80px rgba(217, 70, 239, 0.35),
+      inset 0 0 24px rgba(255, 255, 255, 0.28);
+  }
+}
+
+.cyber-cursor-ring {
+  animation: cyber-cursor-bubble-glow 2.8s ease-in-out infinite;
+}
+
+@keyframes cyber-cursor-triangle-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(217, 70, 239, 0.75))
+      drop-shadow(0 0 22px rgba(34, 211, 238, 0.45));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(217, 70, 239, 0.95))
+      drop-shadow(0 0 32px rgba(34, 211, 238, 0.6));
+  }
+}
+
+.cyber-cursor-triangle {
+  animation: cyber-cursor-triangle-glow 2.2s ease-in-out infinite;
+}
+
+/*
+ * Links, buttons, and Tailwind `cursor-pointer` set their own cursor and override
+ * `body.cursor-none`. Force the system cursor off everywhere, then restore a text
+ * caret only on real text fields.
+ */
+body.cyber-cursor-active * {
+  cursor: none !important;
+}
+
+body.cyber-cursor-active
+  :where(
+    input:not([type='button']):not([type='submit']):not([type='reset']):not([type='checkbox']):not(
+        [type='radio']
+      ):not([type='range']):not([type='file']):not([type='image']),
+    textarea,
+    [contenteditable='true']
+  ) {
+  cursor: text !important;
 }
