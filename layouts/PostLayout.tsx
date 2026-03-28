@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog, Authors } from 'contentlayer/generated'
 import Comments from '@/components/Comments'
+import Newsletter from '@/components/Newsletter'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
@@ -62,6 +63,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 {children}
               </div>
               <div className="pt-6 pb-6 text-sm text-gray-900 dark:text-gray-100">{` • `}</div>
+              <Newsletter className="border-turquoise-surf-200/80 mt-2 rounded-lg border-2 shadow-md" />
               {siteMetadata.comments && (
                 <div
                   className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300"

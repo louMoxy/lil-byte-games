@@ -1,4 +1,5 @@
 import Link from '@/components/Link'
+import Newsletter from '@/components/Newsletter'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
@@ -133,17 +134,7 @@ export default function Home({ posts }: { posts: Post[] }) {
         </div>
       )}
 
-      {/* Newsletter embed: replace this section when your provider snippet is ready */}
-      <section
-        id="newsletter"
-        className="cyber-main-surface border-turquoise-surf-200/80 mt-12 border-t p-8 text-center"
-        aria-labelledby="newsletter-heading"
-      >
-        <h2 id="newsletter-heading" className="font-heading text-pale-sky-950 text-xl font-bold">
-          Newsletter
-        </h2>
-        <p className="text-pale-sky-700 mt-2 text-sm">Signup form coming soon...</p>
-      </section>
+      <Newsletter className="mt-12" />
     </>
   )
 }
