@@ -26,13 +26,11 @@ export default function Home({ posts }: { posts: Post[] }) {
         <div className="glass-panel border-turquoise-surf-200/80 space-y-4 rounded-lg border-2 p-6 pt-8 pb-10 shadow-md md:space-y-6 md:p-10">
           <p className="cyber-muted text-[0.65rem]">Indie dev log // London</p>
           <h1 className="font-heading text-pale-sky-950 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl md:leading-tight">
-            Hi, I&apos;m Louise. I&apos;ve been trying to become an indie game dev for 4 years. It
-            hasn&apos;t gone well. I&apos;m not stopping.
+            I&apos;m Louise. I build websites for a living, I&apos;ve been learning Unity for four
+            years, and I have absolutely nothing shipped to show for it.
           </h1>
           <p className="text-pale-sky-800 max-w-2xl text-lg leading-relaxed">
-            Follow along as I build my first real game — a space shooter — around my day job, my
-            self-doubt, and whatever caffeine I can get my hands on. Updates every week. Honesty
-            guaranteed.
+            That&apos;s the problem I&apos;m trying to fix. You&apos;re welcome to watch.
           </p>
         </div>
 
